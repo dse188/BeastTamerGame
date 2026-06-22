@@ -61,7 +61,14 @@ public class TurnBaseManager : MonoBehaviour
 
     public void EndTurn()
     {
-        currentTurn = TurnState.EnemyTurn;
+        if (currentTurn == TurnState.PlayerTurn)
+        {
+            currentTurn = TurnState.EnemyTurn;
+        }
+        else
+        {
+            currentTurn = TurnState.PlayerTurn;
+        }
 
         // TODO: Need a logic for deciding which unit moves next (next unit with the highest speed)
     }
